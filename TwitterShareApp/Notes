@@ -1,0 +1,5 @@
+Message passing: pass between anything.
+eg 1 from user page to bg script
+content script cant modify popup
+
+html->contentscript (myscript.js)->background page
