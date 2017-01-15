@@ -1,0 +1,40 @@
+    {
+    "manifest_version": 2,
+    "name": "Personalized",
+    "short_name": "Personalized",
+    "version": "1.0",
+    "description": "Replace new tab page with a personal dashboard and much more.",
+    "icons": {
+            "16": "icon.png",
+            "128": "icon.png"
+        },
+
+        "background": {
+            "scripts": [
+                "js/background.js"
+            ],
+            "persistent": false
+        },
+    //"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+    "content_security_policy": "script-src 'self' https://query.yahooapis.com 'unsafe-eval'; object-src 'self'",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+     "permissions": [ "tabs", "*://www.google.co.uk/", "*://www.google.com/", "*://encrypted.google.com/", "*://www.bing.com/", "*://df.gy/" , "*://*.yahooapis.com/*"],
+
+     "content_scripts": [ {
+     //"js": [ "js/jquery.min.js"],
+     "matches": [ "http://*/*", "https://*/*"],
+       "css": [ "css/background.css" ]   
+      }],
+       "offline_enabled": true,
+       "browser_action": {
+        "default_icon": "icon.png", // optional
+        "default_title": "Personalized"          // optional; shown in tooltip
+        //"default_popup": "popup.html"        // optional
+      },
+
+         "chrome_url_overrides": {
+            "newtab": "html/newtab.html"
+        }
+        
+}
+
