@@ -1,0 +1,10 @@
+﻿.sb-weather-topbar { color: White; }
+.portrait { color: Black; margin-top: 10px; }
+
+.weather { position: relative; padding-left: 22px; max-width: 200px; }
+.weather img { width: 22px; height: 22px; position: absolute; left: 0; top: 0; }
+.weather .description { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 4px 0 0; }
+.weather .description label { float: left; margin: 0 0 0 5px; line-height: 16px; }
+.weather .clear { clear: both; }
+a.weather:hover, a.weather:-webkit-any-link { text-decoration: none; }
+.weather label { cursor: pointer; }

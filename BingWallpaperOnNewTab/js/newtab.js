@@ -1,3 +1,5 @@
+$(function(){
+
 var myXML = "";
 
 var backgroundImageBase = "";
@@ -25,4 +27,22 @@ request.onreadystatechange = function(){
     }
 }
 request.send();
+var file=document.getElementById('fileInput')
+var button=document.getElementById('openLocal');
+button.onclick = function(){
+
+    document.getElementById('fileInput').click();
+    
+    $('#fileInput').on('change', function (event) {
+            console.log(this.files[0]);
+         var getImagePath = URL.createObjectURL(event.target.files[0]);
+         $(document).css('background-image', 'url(' + getImagePath + ')');
+});
  
+}   
+
+function readURL(event){
+        
+        }
+
+});

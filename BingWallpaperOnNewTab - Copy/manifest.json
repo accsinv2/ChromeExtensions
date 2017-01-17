@@ -16,28 +16,29 @@
             ],
             "persistent": false
         },
-    //"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-  
-  //"content_security_policy": "script-src 'self' https://query.yahooapis.com 'unsafe-eval'; object-src 'self'",
-    //"content_security_policy": "script-src 'self' http://query.yahooapis.com",
+    
+ 	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://d31qbv1cthcecs.cloudfront.net https://d5nxst8fruw4z.cloudfront.net; object-src 'self'",
+
+    "content_security_policy": "script-src 'self' http://query.yahooapis.com",
         	"content_security_policy": "script-src 'self' https://www.google.com https://maps.google.com https://maps.googleapis.com https://www.google-analytics.com https://mts0.googleapis.com https://mts1.googleapis.com; object-src 'self'",
 
     "update_url": "https://clients2.google.com/service/update2/crx",
-     "permissions": [ "tabs", "*://www.google.co.uk/", "*://www.google.com/", "*://encrypted.google.com/", "*://www.bing.com/", "*://df.gy/" , "*://*.yahooapis.com/*", "webNavigation", "storage", "<all_urls>",
-                     "*://*.accuweather.com/*","http://*.accuweather.com/",
-		"http://*.accu-weather.com/"],
+    "permissions": [ "tabs", "*://www.google.co.uk/", "*://www.google.com/", "*://encrypted.google.com/", "*://www.bing.com/", "*://df.gy/" , "*://*.yahooapis.com/*", "webNavigation", "storage", "<all_urls>","*://*.accuweather.com/*","http://*.accuweather.com/",
+    "http://*.accu-weather.com/"],
 
-     "content_scripts": [ {
+     
+        "permissions":  [ "tabs","*://www.bing.com/","http://*/*", "https://*/*","geolocation","topSites","webNavigation"],
+        "content_scripts": [ {
      //"js": [ "js/jquery-1.9.1.min.js"],
      "matches": [ "http://*/*", "https://*/*","file:///*"],
-     "css": [ "css/background.css" ] ,
+     "css": [ "css/background.css","css/weather.css" ] ,
      "run_at": "document_start"
      
       }],
        "offline_enabled": true,
        "browser_action": {
         "default_icon": "icon.png", // optional
-        "default_title": "Personalized",          // optional; shown in tooltip
+        "default_title": "Personalized"          // optional; shown in tooltip
         //"default_popup": "html/popup.html"        // optional
       },
 

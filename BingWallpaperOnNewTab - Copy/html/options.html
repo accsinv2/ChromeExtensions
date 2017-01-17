@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>AccuWeather Forecast Options</title>
+<style type="text/css">
+a {
+color: white;
+}
+</style>
+
+</head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+  localStorage["favorite_city"] = document.getElementById("city").value;
+  localStorage["color"] = document.getElementById("color").value;
+  localStorage["locset"] = "1";
+  if(document.getElementById("metric").checked == true) { localStorage["nonmetric"] = 0; }
+  else  { localStorage["nonmetric"] = 1; }
+  alert("Options saved.");
+  
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  if(localStorage["favorite_city"] != null)
+        document.getElementById("city").value = localStorage["favorite_city"];
+	if(localStorage["nonmetric"] != 1) {
+	document.getElementById("metric").checked = true;
+	}
+	if(localStorage["color"] != null) document.getElementById("color").value = localStorage["color"];
+	
+}
+
+</script>
+
+<body onload="restore_options()" bgcolor=gray>
+<center>
+<div style="left:auto;">
+<br><br><br>
+<h1><font color=white>AccuWeather Forecast Options
+<h2>
+City:
+<input type="text" id="city"/>
+
+ <font size="4">Metric?</font> <input type="checkbox" id="metric" />
+<br><font size=2> For example: New York or EUR|DE|GM001|KARLSRUHE 
+<br>You can find your international code at <a href="http://www.accuweather.com/world-index.asp?partner=acewebnet&traveler=0" target="_blank">AccuWeather.com</a>
+<br><br><font size="+1">Popup background color: <input type="text" id="color"/>
+<br><font size="-1">For example: white or #CDCDCD
+<br>You can find your color code <a href="http://www.allhtmlcodes.com/colorpicker.swf" target="_blank">here</a>
+</font>
+<br><button onclick="save_options()">Save</button>
+</div>
+<div style="position:absolute;top:10px;right:10px;">
+Powered by <strong><a href="http://accuweather.com" target="_blank">AccuWeather</a></strong>
+</div>
+<div style="position:absolute;bottom:10px;right:10px;">
+For suggestions and support visit the <strong><a href="http://www.chromeplugins.org/google/chrome-plugins/new-ext-accuweather-forecast-8805.html" target="_blank">forum</a></strong>.
+</div>
+</body>
+</html>
